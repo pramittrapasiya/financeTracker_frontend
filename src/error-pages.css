@@ -1,0 +1,134 @@
+
+/* 404 Not Found Page */
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.not-found-icon {
+  font-size: 8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.not-found-content h1 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.not-found-content p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.not-found-content .btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+/* Error Boundary */
+.error-boundary-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg-color);
+}
+
+.error-boundary-content {
+  text-align: center;
+  max-width: 600px;
+  background: var(--card-bg);
+  padding: 3rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.error-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.error-boundary-content h1 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.error-boundary-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.error-details {
+  background: var(--bg-color);
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--danger-color);
+}
+
+.error-message {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--danger-color);
+  text-align: left;
+  margin: 0;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.error-actions button {
+  min-width: 150px;
+}
+
+/* Mobile Responsive for Error Pages */
+@media (max-width: 768px) {
+  .not-found-icon {
+    font-size: 5rem;
+  }
+
+  .not-found-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .error-boundary-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .error-actions button {
+    width: 100%;
+  }
+}
