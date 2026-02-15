@@ -58,6 +58,10 @@ export const AuthProvider = ({ children }) => {
             localStorage.setItem('token', token);
             localStorage.setItem('user', JSON.stringify(user));
             setUser(user);
+
+            // Dispatch custom event to notify navbar
+            window.dispatchEvent(new Event('userLoggedIn'));
+
             return { success: true };
         } catch (error) {
             console.error('❌ Login error:', {

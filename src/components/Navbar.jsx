@@ -11,6 +11,26 @@ const Navbar = () => {
         if (userData) {
             setUser(JSON.parse(userData));
         }
+
+        // Listen for storage changes (when user logs in)
+        const handleStorageChange = () => {
+            const updatedUser = localStorage.getItem('user');
+            if (updatedUser) {
+                setUser(JSON.parse(updatedUser));
+            } else {
+                setUser(null);
+            }
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+
+        // Also listen for custom event when user logs in on same tab
+        window.addEventListener('userLoggedIn', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+            window.removeEventListener('userLoggedIn', handleStorageChange);
+        };
     }, []);
 
     // Lock body scroll when mobile menu is open
